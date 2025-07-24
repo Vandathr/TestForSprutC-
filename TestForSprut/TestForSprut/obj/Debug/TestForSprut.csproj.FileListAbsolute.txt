@@ -1,0 +1,10 @@
+D:\Users\Ilnur\source\repos\TestForSprut\TestForSprut\obj\Debug\TestForSprut.csproj.AssemblyReference.cache
+D:\Users\Ilnur\source\repos\TestForSprut\TestForSprut\obj\Debug\TestForSprut.csproj.SuggestedBindingRedirects.cache
+D:\Users\Ilnur\source\repos\TestForSprut\TestForSprut\obj\Debug\TestForSprut.Properties.Resources.resources
+D:\Users\Ilnur\source\repos\TestForSprut\TestForSprut\obj\Debug\TestForSprut.csproj.GenerateResource.cache
+D:\Users\Ilnur\source\repos\TestForSprut\TestForSprut\obj\Debug\TestForSprut.csproj.CoreCompileInputs.cache
+D:\Users\Ilnur\source\repos\TestForSprut\TestForSprut\bin\Debug\TestForSprut.exe.config
+D:\Users\Ilnur\source\repos\TestForSprut\TestForSprut\bin\Debug\TestForSprut.exe
+D:\Users\Ilnur\source\repos\TestForSprut\TestForSprut\bin\Debug\TestForSprut.pdb
+D:\Users\Ilnur\source\repos\TestForSprut\TestForSprut\obj\Debug\TestForSprut.exe
+D:\Users\Ilnur\source\repos\TestForSprut\TestForSprut\obj\Debug\TestForSprut.pdb
