@@ -40,6 +40,10 @@ namespace TestForSprut
 
         private float scale = 1;
 
+        private int scrollX;
+        private int scrollY;
+
+
 
         private int coordinateStartX;
         private int coordinateStartY;
@@ -76,8 +80,8 @@ namespace TestForSprut
             Location = new Point(locationX, locationY);
             Size = new Size(sizeX, sizeY);
 
-
             AutoScroll = true;
+            VerticalScroll.Enabled = true;
             HorizontalScroll.Enabled = true;
 
             PaintArea.Location = new System.Drawing.Point(0, 0);
@@ -162,13 +166,28 @@ namespace TestForSprut
         {
             ((HandledMouseEventArgs)args).Handled = true;
 
+            
+
             if (args.Delta < 0)
-            {
-                
+            {               
                 scale += (args.Delta / 100.0f);
 
                 if (scale < 0.02) scale = 0.02f;
-                
+
+                HorizontalScroll.Value = 0;
+                VerticalScroll.Value = 0;
+
+
+
+                //scrollX = (int)(args.X * scale - Width / 2);
+                //scrollY = (int)(args.Y * scale - Height / 2);
+
+                //if (scrollX > HorizontalScroll.Minimum && scrollX < HorizontalScroll.Maximum && scrollY > VerticalScroll.Minimum && scrollY < VerticalScroll.Maximum)
+                //{
+                //    HorizontalScroll.Value = scrollX;
+                //    VerticalScroll.Value = scrollY;
+                //}
+
 
                 PaintArea.Invalidate();
                 
@@ -181,6 +200,15 @@ namespace TestForSprut
                 if (scale > 4)
                     scale = 4;
 
+                scrollX = (int)(args.X * scale - Width / 2);
+                scrollY = (int)(args.Y * scale - Height / 2);
+
+                if (scrollX > HorizontalScroll.Minimum && scrollX < HorizontalScroll.Maximum && scrollY > VerticalScroll.Minimum && scrollY < VerticalScroll.Maximum)
+                {
+                    HorizontalScroll.Value = scrollX;
+                    VerticalScroll.Value = scrollY;
+                }
+
                 PaintArea.Invalidate();
                 
             }
@@ -189,17 +217,17 @@ namespace TestForSprut
 
         private void MapMouseDown(MouseEventArgs args)
         {
-            refToVisual.ProcessMouseDown(args.X, args.Y);
+            refToVisual.ProcessMouseDown((int)(args.X / scale), (int)(args.Y / scale));
             PaintArea.Invalidate();
         }
         private void MapMouseUp(MouseEventArgs args) 
         {
-            refToVisual.ProcessMouseUp(args.X, args.Y);
+            refToVisual.ProcessMouseUp((int)(args.X / scale), (int)(args.Y / scale));
             PaintArea.Invalidate();
         }
         private void MapMouseMove(MouseEventArgs args)
         {
-            refToVisual.ProcessMouseMove(args.X, args.Y);
+            refToVisual.ProcessMouseMove((int)(args.X / scale), (int)(args.Y / scale));
             PaintArea.Invalidate();
         }
 
